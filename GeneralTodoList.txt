@@ -1,0 +1,67 @@
+===========================================================================================================================================================
+																		Items
+===========================================================================================================================================================
+
+- ChickenEgg
+	- Remove Recipe, uncraftable
+	- yolky effect
+	- buff sprite for yolk effect
+	- Add 'breaking' dust
+
+- ChickenRaw - DONE
+
+- ChickenCooked
+	- still shows up in crafting w/ no recipe
+
+- GoldenEgg
+	- Create sprite
+	- Currently basic replica of ChiItemEgg
+	- Adjust properties to correctly suit a pet summon item
+	- Remove recipes, uncraftable
+
+===========================================================================================================================================================
+																	Projectiles
+===========================================================================================================================================================
+
+- ChickenEggProjectile
+	- Hits enemies but not townNPCs
+	- Applying debuff
+	- Check debuff for yolky effect and not fire
+
+===========================================================================================================================================================
+																      Buffs
+===========================================================================================================================================================
+
+- Yolky BUff
+	- sprite buff
+	- fix dust
+
+- Chicken Pet
+	- Sprite
+	- properties?
+	connect to Gold egg
+
+===========================================================================================================================================================
+																	NPCs
+===========================================================================================================================================================
+
+- ChickenNPC - DONE
+	- Should be all set
+	- Loot table:
+		- Raw Chicken (ChiItemRaw), 1-2
+		- Chicken Egg (ChiItemEgg), 4-12
+		- Golden Egg (ChiItemGoldEgg), 1, 1 in 40
+
+	                Item.NewItem(npc.getRect(), mod.ItemType("ChiItemRaw"), 1 + Main.rand.Next(2));     //Drop 1-2 Raw Chicken
+                Item.NewItem(npc.getRect(), mod.ItemType("ChiItemEgg"), 4 + Main.rand.Next(9));     //Drop 6-12 Eggs
+                if (Main.rand.Next(41) == 0)
+	                Item.NewItem(npc.getRect(), mod.ItemType("ChiItemGoldEgg"), 1);                 //1 in 200 chance to drop Gold Egg
+
+
+- ChickenPet
+	- Assign Sprite
+	- Create NPC
+	- Create Buff icon - DONE
+	- assign buff icon
+	- NPC-AI identical to slimeys but passive (pet)
+	- randomly spawn ChickenNPC, 5-10 mins
