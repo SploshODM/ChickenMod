@@ -16,9 +16,6 @@ namespace ChickenMod.Items
 		}
         public override void SetDefaults()
         {
-            
-            //item.buffTime = 0;                      //Duration of given buff
-            //item.bufftype = 0;                      //ID of buff given by the item. For multiple buffs, assign one buff here, then in ModItem.UseItem, call player.AddBuff(buffID, time)
             item.CloneDefaults(ItemID.RottenEgg);   //Copies the properties of another item
             item.consumable = true;
             item.damage = 1;
