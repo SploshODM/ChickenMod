@@ -25,7 +25,7 @@
 
 - ChickenEggProjectile
 	- Hits enemies but not townNPCs
-	- Applying debuff
+	- Applying dust
 	- Check debuff for yolky effect and not fire
 
 ===========================================================================================================================================================
@@ -65,3 +65,5 @@
 	- assign buff icon
 	- NPC-AI identical to slimeys but passive (pet)
 	- randomly spawn ChickenNPC, 5-10 mins
+
+
