@@ -110,73 +110,33 @@ namespace ChickenMod.Items
     }  //"ChickenCooked", cooked food item
 
     public class ChiItemGoldEgg : ModItem
-	{
-		public override void SetStaticDefaults()
+    {
+        public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Egg");
-			Tooltip.SetDefault("Fe Fi Fo Fum, did this just come from that chickens...");
+			Tooltip.SetDefault("Summons a friendly chicken to follow you");
 		}
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.RottenEgg);   //Copies the properties of another item
-            item.damage = 1;
-            item.height = 7;
-            item.width = 7;
-            /*
-            item.accessory = false;
-            item.ammo = AmmoID.None;
-            item.autoReuse = false;
-            item.bait = 0; 
-            item.buffTime = 0;
-            item.bufftype = 0;
-            item.channel = true;
-            item.CloneDefaults(ItemID.<ItemName>)
-            item.consumable = false;
-            item.createTile = -1;
-            item.createWall = -1;
-            item.crit = 0;
-            item.damage = -1;
-            item.defense = 0;
-            item.expert = false;
-            item.fishingPole = 0;
-            item.healLife = 0;
-            item.healMana = 0;
-            item.height = 0;
-            item.holdStyle = 0;
-            item.knockBack = 0f;
-            item.mana = 0;
-            item.material = false;
-            item.maxStack = 1;
-            item.mech = false;
-            item.noMelee = false;
-            item.noUseGraphic = false;
-            item.notAmmo = false;
-            item.placeStyle = 0;
-            item.potion = false;
-            item.questItem = false;
-            item.rare = 0;
-            item.reuseDelay = 0;
-            item.scale = 1f;
-            item.shoot = 0;
-            item.shootSpeed = 0f;
-            item.useAmmo = AmmoID.None;
-            item.useAnimation = 100;.
-            item.useStyle = 0;
-            item.UseSound = null;
-            item.useTime = 100;
-            item.useTurn = false;
-            item.value = 0;
-            item.width = 0;
-            //*/
+            item.CloneDefaults(ItemID.ZephyrFish);
+            item.shoot = mod.ProjectileType("ChickenPetNPC");
+            item.buffType = mod.BuffType("ChickenPetBuff");
         }
-
+ 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.SetResult(this);
             recipe.AddRecipe();
-        } //Remove recipe as this is a drop from ChickenNPC
-
+        }
+ 
+        public override void UseStyle(Player player)
+        {
+            if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
+            {
+                player.AddBuff(item.buffType, 3600, true);
+            }
+        }
     } //"ChickenGoldEgg", Pet summon item
 }

@@ -14,15 +14,18 @@ namespace ChickenMod
     public class MyPlayer : ModPlayer
     {
         public bool EggYolk = false;
+        public bool ChickenPetBuff = false;
 
         public override void ResetEffects()
         {
             EggYolk = false;
+            ChickenPetBuff = false;
         }
 
         public override void UpdateDead()
         {
             EggYolk = false;
+            ChickenPetBuff = false;
         }
     }
 }
