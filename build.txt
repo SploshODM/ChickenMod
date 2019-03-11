@@ -2,3 +2,7 @@ author = ODM_Splosh
 version = 1.0.0.0
 displayName = CHICKENS!!
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+hideCode = false
+hideResources = false
+includeSource = true
+homepage = https://github.com/SploshODM
