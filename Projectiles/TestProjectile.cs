@@ -17,7 +17,7 @@ namespace ChickenMod.Projectiles
         {
             projectile.CloneDefaults(ProjectileID.RottenEgg);
             aiType = ProjectileID.RottenEgg;
-            projectile.damage = 1;                  //Damage recognised? Maybe damage=ZERO causing null interaction
+            projectile.damage = 1;
             projectile.width = 7;
             projectile.height = 7;
         }
@@ -28,10 +28,13 @@ namespace ChickenMod.Projectiles
             target.AddBuff(mod.BuffType("EggYolk"), 600);
         }
 
-        /*        public override void AI()
+        /*
+        public override bool OnTileCollide(Vector2 oldVelocity)  
         {
-            Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 127, projectile.velocity.X * -0.2f, projectile.velocity.Y * -0.2f);
+			projectile.Kill();
+            Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 16, projectile.velocity.X * -0.2f, projectile.velocity.Y * -0.2f);
         }
-        */ //Need to add dust for when egg breaks on ground/NPC
+        */
+        //Need to add dust for when egg breaks on ground/NPC
     }
 }
