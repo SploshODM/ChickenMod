@@ -1,39 +1,20 @@
 ===========================================================================================================================================================
-																		Items
+																    Add New Stuff
 ===========================================================================================================================================================
-
-- ChickenEgg - DONE
-
-- ChickenRaw - DONE
-
-- ChickenCooked - DONE
-
-- GoldenEgg - DONE
+ - Chicken Boss?? Simple AI to learn Boss coding
+ - Chicken Pet so occasionally spawn a new chicken to kill for food/eggs
 
 ===========================================================================================================================================================
-																	Projectiles
+																   Update Old Stuff
 ===========================================================================================================================================================
+ - Allow the 'Chicken Egg' to hit town NPC's and other players
 
-- ChickenEggProjectile - DONE
+===========================================================================================================================================================
+																  Behind the Scenes
+===========================================================================================================================================================
+ - build.txt
+	- Change settings to allow players to extract mod and see source files and resources to hopefully get some advice
+	- allow extract tool to show .png's for possible respriters??
 
-- ChickenPetNPC
-	- correct sprite
-		- Get the chickens feet out of the ground
-		- reduce sprite.png to 4 frames - issue is there is a blank frame in the animation. 
+ - Correct the sprite for ChickenPet: issue is there is a blank frame in the animation. 
 			Currently cant see it because the sheer number of frames makes the jump too fast to see
-
-===========================================================================================================================================================
-																      Buffs
-===========================================================================================================================================================
-
-- EggYolk - Done
-
-- Chicken Pet - DONE
-
-===========================================================================================================================================================
-																	NPCs
-===========================================================================================================================================================
-
-- ChickenNPC - DONE
-
-- NPCsGLOBAL - DONE
