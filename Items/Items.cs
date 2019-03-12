@@ -6,7 +6,6 @@ using Terraria.ModLoader;
 
 namespace ChickenMod.Items
 {
-    ///*
 	public class ChiItemEgg : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -16,15 +15,15 @@ namespace ChickenMod.Items
 		}
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.RottenEgg);   //Copies the properties of another item
+            item.CloneDefaults(ItemID.RottenEgg);
             item.consumable = true;
             item.damage = 1;
             item.height = 7;
             item.maxStack = 12;
             item.noMelee = true;
             item.noUseGraphic = true;
-            item.shoot = mod.ProjectileType("ChiProEgg");           //Now shoots custom projectile
-            item.shootSpeed = 9f;                                   //Projectile Speed
+            item.shoot = mod.ProjectileType("ChiProEgg");
+            item.shootSpeed = 9f;
             item.useAnimation = 19;
             item.useStyle = 1;
             item.UseSound = SoundID.Item19;
@@ -33,15 +32,7 @@ namespace ChickenMod.Items
             item.width = 7;
             item.thrown = true;
         }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-        } //Remove recipe as this is a drop from ChickenNPC
-	} //End of Item
-    //*/ //"ChickenEgg", throwing item
+	}
 
     public class ChiItemRaw : ModItem
 	{
@@ -67,8 +58,7 @@ namespace ChickenMod.Items
             item.value = 100;
             item.width = 18;
         }
-	} //"ChickenRaw", uncooked food item
-    //Finished
+	}
 
     public class ChiItemCooked : ModItem
 	{
@@ -96,18 +86,18 @@ namespace ChickenMod.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("ChickenRaw"), 1);
+            recipe.AddIngredient(mod.ItemType("ChiItemRaw"), 1);
             recipe.AddTile(TileID.Campfire);
             recipe.SetResult(this);
             recipe.AddRecipe();
 
             recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("ChickenRaw"), 1);
+            recipe.AddIngredient(mod.ItemType("ChiItemRaw"), 1);
             recipe.AddTile(17);
             recipe.SetResult(this);
             recipe.AddRecipe();
         } 
-    }  //"ChickenCooked", cooked food item
+    }
 
     public class ChiItemGoldEgg : ModItem
     {
@@ -119,16 +109,10 @@ namespace ChickenMod.Items
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.ZephyrFish);
+            item.CloneDefaults(ItemID.Bunny);
+            item.consumable = false;
             item.shoot = mod.ProjectileType("ChickenPetNPC");
             item.buffType = mod.BuffType("ChickenPetBuff");
-        }
- 
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
  
         public override void UseStyle(Player player)
@@ -138,5 +122,5 @@ namespace ChickenMod.Items
                 player.AddBuff(item.buffType, 3600, true);
             }
         }
-    } //"ChickenGoldEgg", Pet summon item
+    }
 }
