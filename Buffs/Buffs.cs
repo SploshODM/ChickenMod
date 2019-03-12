@@ -25,7 +25,7 @@ namespace ChickenMod.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-        npc.GetGlobalNPC<NPCsGLOBAL>(mod).EggYolk = true;
+            npc.GetGlobalNPC<NPCsGLOBAL>(mod).EggYolk = true;
         }
     }
 
@@ -43,10 +43,10 @@ namespace ChickenMod.Buffs
         {
             player.buffTime[buffIndex] = 18000;
             player.GetModPlayer<MyPlayer>(mod).ChickenPetBuff = true;
-            bool petProjectileNotSpawned = player.ownedProjectileCounts[mod.ProjectileType("PetName")] <= 0;
+            bool petProjectileNotSpawned = player.ownedProjectileCounts[mod.ProjectileType("ChickenPet")] <= 0;
             if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
             {
-                Projectile.NewProjectile(player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2), 0f, 0f, mod.ProjectileType("PetName"), 0, 0f, player.whoAmI, 0f, 0f);
+                Projectile.NewProjectile(player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2 + 10), 0f, 0f, mod.ProjectileType("PetName"), 0, 0f, player.whoAmI, 0f, 0f);
             }
         }
     }
