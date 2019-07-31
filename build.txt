@@ -1,5 +1,5 @@
 author = ODM_Splosh
-version = 1.0.0.0
+version = 1.0.0.2
 displayName = CHICKENS!!
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 hideCode = false
